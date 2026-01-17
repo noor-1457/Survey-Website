@@ -3,14 +3,19 @@ import cors from "cors";
 
 import pollRoutes from "./routes/pollRoutes.js";
 import voteRoutes from "./routes/voteRoutes.js";
+import authRoutes from './routes/authRoutes.js';
+
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+
 app.use("/api/polls", pollRoutes);
 app.use("/api/votes", voteRoutes);
+app.use('/api/auth', authRoutes);
+
 
 app.get("/", (req, res) => {
   res.json({ status: "API running" });
