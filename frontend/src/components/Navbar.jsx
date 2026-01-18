@@ -1,7 +1,18 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { Menu, X, Home, PlusCircle, BarChart3, Search, LogIn, UserPlus, LogOut, User } from 'lucide-react';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import {
+  Menu,
+  X,
+  Home,
+  PlusCircle,
+  BarChart3,
+  Search,
+  LogIn,
+  UserPlus,
+  LogOut,
+  User,
+} from "lucide-react";
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -11,22 +22,21 @@ const Navbar = () => {
   const handleLogout = () => {
     logout();
     setIsMenuOpen(false);
-    navigate('/');
+    navigate("/");
   };
 
   // Simple navigation links
   const navLinks = [
-    { name: 'Home', href: '/', icon: Home },
-    { name: 'Create Poll', href: '/create', icon: PlusCircle },
-    { name: 'Browse Polls', href: '/browse', icon: Search },
-    { name: 'Results', href: '/results', icon: BarChart3 },
+    { name: "Home", href: "/", icon: Home },
+    { name: "Create Poll", href: "/create", icon: PlusCircle },
+    { name: "Browse Polls", href: "/browse", icon: Search },
+    { name: "Result", href: "/result", icon: BarChart3 },
   ];
 
   return (
     <nav className="bg-white shadow-md border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          
           {/* Left side - Logo & Links */}
           <div className="flex items-center">
             {/* Logo */}
@@ -56,7 +66,6 @@ const Navbar = () => {
 
           {/* Right side - Auth Buttons */}
           <div className="flex items-center space-x-4">
-            
             {/* Desktop Auth Buttons */}
             <div className="hidden md:flex md:items-center md:space-x-3">
               {isAuthenticated ? (
@@ -114,7 +123,6 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            
             {/* Mobile Navigation Links */}
             {navLinks.map((link) => (
               <Link
