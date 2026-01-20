@@ -12,6 +12,7 @@ import {
   UserPlus,
   LogOut,
   User,
+  Vote
 } from "lucide-react";
 
 const Navbar = () => {
@@ -30,6 +31,7 @@ const Navbar = () => {
     { name: "Home", href: "/", icon: Home },
     { name: "Create Poll", href: "/create", icon: PlusCircle },
     { name: "Browse Polls", href: "/browse", icon: Search },
+    { name: "Vote Polls", href: "/vote-polls", icon: Vote },
     { name: "Result", href: "/result", icon: BarChart3 },
   ];
 

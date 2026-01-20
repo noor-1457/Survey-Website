@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import Result from "./pages/Result";
 import PollList from "./pages/PollList";
+import VotePolls from "./pages/VotePolls";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           {/* Protected Route - Create Poll (Only for logged in users) */}
           <Route path="/create" element={<CreatePoll />} />
           <Route path="/browse" element={<PollList />} />
+          <Route path="/vote-polls" element={<VotePolls />} />
 
           {/* Catch all - Redirect to home */}
           <Route path="*" element={<Navigate to="/" />} />
